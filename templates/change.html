@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faculty</title>
+</head>
+<body>
+    {% for i in data %}
+    <h4> professor id is {{i.id}} and his/her position is {{i.pos}} </h4>
+    {% endfor %}
+
+    <form action = "status", method = "POST">
+        {% csrf_token %}
+        <input type= "text" name ="id"><br>
+        <input type="checkbox"  name="status" value="faculty">
+        <label for="status">faculty</label><br>
+        <input type="checkbox" id="Rejected" name="status" value="CSEHOD">
+        <label for="status">CSEHOD</label><br>
+        <input type="checkbox" id="Rejected" name="status" value="Dean">
+        <label for="status">Dean</label><br>
+        <input type="submit" value="Submit">
+        
+      </form>
+</body>
+</html>

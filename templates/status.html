@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Dean</title>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application form</title>
+  <style type="text/css">
+    body, html {
+      height: 100%;
+    }
+
+    body {
+      /* The image used */
+      background : url("https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Simple-Blue-White-Background-Image.jpg");
+
+      /* Full height */
+      height: 100%;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .form {
+      display : flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 210px;
+    }
+
+    .form label{
+      display: inline-block;
+      text-align: left;
+    }
+
+    .form input{
+      display: inline-block;
+      text-align: center;
+
+    }
+    h1,h3{
+      text-decoration: underline;
+    }
+    h4.solid {border-style: solid;}
+  </style>
+
+
+<body>
+  <h1 align = center style="color: black"; "font-size:40px";>PENDING APPLICATIONS</h1><br>
+  <br>
+
+    {% for i in data %}
+     <p align = center style="color: black"; "font-size:20px";> given id {{i.id}}</p>
+     <p align = center style="color: black"; "font-size:20px";> professor id {{i.pro_id}}</p>
+     <p align = center style="color: black"; "font-size:20px";>date from {{i.datefrom}}</p>
+     <p align = center style="color: black"; "font-size:20px";>date to {{i.dateto}}</p>
+     <p align = center style="color: black"; "font-size:20px";>number of days {{i.num_of_days}}</p>
+     <p align = center style="color: black"; "font-size:20px";> reason {{i.reason}}</p>
+<div class = "form">
+  <form action = "status", method = "POST">
+    {% csrf_token %}
+    <input type="checkbox" id="Approval" name="status" value="Approval">
+    <label for="status">Approval</label><br>
+    <input type="checkbox" id="Rejected" name="status" value="Rejected">
+    <label for="status">Rejected</label><br><br>
+    <input type="text"  name="reason" placeholder ="reason"><br><br>
+    <input type="text"  name="id" placeholder ="application id"><br><br>
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
+  {% endfor %}
+</body>
+</html>

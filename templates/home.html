@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  border-radius: 20px;
+  width: 330px;
+  padding: 10px;
+  border: 5px solid khaki;
+  margin: 0;
+  background : khaki;
+}
+</style>
+</head>
+<body>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<title>Leave Application Page</title>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application form</title>
+  <style type="text/css">
+    body, html {
+      height: 100%;
+    }
+
+    body {
+      /* The image used */
+      background : url("https://media-exp1.licdn.com/dms/image/C511BAQFACRg7zJQIcQ/company-background_10000/0/1578466945113?e=2159024400&v=beta&t=vlh1zfBPUK7d_rF4_W0R11l5woYrqhWtc6WsuWqCOds");
+
+      /* Full height */
+      height: 100%;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .form {
+      display : flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 210px;
+    }
+
+    .form label{
+      display: inline-block;
+      text-align: left;
+    }
+
+    .form input{
+      display: inline-block;
+      text-align: center;
+
+
+    }
+  </style>
+
+</head>
+<body>
+<h1 align = center style="color: white"; "font-size:40px";>Login</h1>
+<br><br><br><br><br><br><br><br>
+  <div class = "form">
+    <form action="home", method = "POST">
+      {% csrf_token %}
+        <label for="fname" style="color:white">Institute ID:</label><br>
+        <input type="text" id="fname" name="id" placeholder ="id" color = lightblue><br>
+        <br>
+        <label for="lname" style="color:white">Password:</label><br>
+        <input type="text" id="lname" name="password" placeholder ="password"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+
+     {% for i in data %}
+       <h1>{{i.dept_name}}</h1>
+       {% endfor %}
+</body>
+</html>

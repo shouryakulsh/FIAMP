@@ -1,0 +1,141 @@
+{% for i in data %}
+<h4>numbers of leaves remaining</h4>
+<h1> {{i.leaves}}</h1>
+{% endfor %}
+
+
+{% for i in a %}
+<h4>Application id is {{i.id}} which is from {{i.datefrom}} to {{i.dateto}}</h4>
+{% for j in c %}
+{% if i.id == j.id %}
+<h4>hod comment is {{j.comm}} and {{j.status}}</h4>
+{% endif %}
+{% for m in g %}
+{% if m.app_id == i.id %}
+<h4>hod is {{m.pro_id}}</h4>
+{%endif%}
+{%endfor%}
+{% endfor %}
+
+{% for k in d %}
+{% if i.id == k.id %}
+<h4>dean comment is {{k.comm}} and {{k.status}}</h4>
+{% endif %}
+{% for m in h %}
+{% if m.app_id == i.id %}
+<h4>dean is {{m.pro_id}}</h4>
+{%endif%}
+{%endfor%}
+{% endfor %}
+
+
+{% for l in e %}
+{% if i.id == l.id %}
+<h4>director comment is {{l.comm}} and {{l.status}}</h4>
+{% endif %}
+{% for m in z %}
+{% if m.app_id == i.id %}
+<h4>director is {{m.pro_id}}</h4>
+{%endif%}
+{%endfor%}
+{% endfor %}
+{% endfor %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<title>Leaves</title>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application form</title>
+  <style type="text/css">
+    body, html {
+      height: 100%;
+    }
+
+    body {
+      /* The image used */
+      background : url("https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Simple-Blue-White-Background-Image.jpg");
+
+      /* Full height */
+      height: 100%;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    h4{
+      text-decoration: underline;
+      align = center; border:solid ;
+      color: black;
+    }
+    h4.solid {border-style: solid;}
+
+  </style>
+
+</head>
+<body>
+<h1 align = center
+  style="color: black"; "font-size:40px";>LEAVE APPLICATION HISTORY</h1>
+<br>
+<br>
+
+{% for i in data %}
+<h4 align = center border:solid style="color: black";   ; "font-size:30px"; > Professor id :{{i.id}} and his/her curent position : {{i.pos}} </h4>
+{% endfor %}
+<br><br><br><br>
+    {% for i in data %}
+    <h4 align = center border:solid style="color: black";   ; "font-size:30px"; >numbers of leaves remaining</h4>
+    <h1 align = center border:solid style="color: black";   ; "font-size:30px"; > {{i.leaves}}</h1>
+    {% endfor %}
+
+
+    {% for i in a %}
+    <h4 align = center border:solid style="color: black";   ; "font-size:30px"; >Application id is {{i.id}} which is from {{i.datefrom}} to {{i.dateto}}</h4>
+    {% for j in c %}
+    {% if i.id == j.id %}
+    <h4 align = center border:solid style="color: black";   ; "font-size:30px"; >hod comment is {{j.comm}} and {{j.status}}</h4>
+    {% endif %}
+    {% for m in g %}
+    {% if m.app_id == i.id %}
+    <h4 align = center border:solid style="color: black";   ; "font-size:30px"; >hod is {{m.pro_id}}</h4>
+    {%endif%}
+    {%endfor%}
+    {% endfor %}
+
+    {% for k in d %}
+    {% if i.id == k.id %}
+    <h4 align = center border:solid style="color: black";   ; "font-size:30px"; >dean comment is {{k.comm}} and {{k.status}}</h4>
+    {% endif %}
+    {% for m in h %}
+    {% if m.app_id == i.id %}
+    <h4 align = center border:solid style="color: black";   ; "font-size:30px"; >dean is {{m.pro_id}}</h4>
+    {%endif%}
+    {%endfor%}
+    {% endfor %}
+
+
+    {% for l in e %}
+    {% if i.id == l.id %}
+    <h4 align = center border:solid style="color: black";   ; "font-size:30px"; >director comment is {{l.comm}} and {{l.status}}</h4>
+    {% endif %}
+    {% for m in z %}
+    {% if m.app_id == i.id %}
+    <h4 align = center border:solid style="color: black";    "font-size:30px"; >director is {{m.pro_id}}</h4>
+    {%endif%}
+    {%endfor%}
+    {% endfor %}
+    {% endfor %}
+
+
+
+
+
+
+</body>
+</html>

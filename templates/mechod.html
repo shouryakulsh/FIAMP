@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Leave Application Page</title>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application form</title>
+  <style type="text/css">
+    body, html {
+      height: 100%;
+    }
+
+    body {
+      /* The image used */
+      background : url("https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Simple-White-Pattern-Background-Image.jpg");
+
+      /* Full height */
+      height: 100%;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .form {
+      display : flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 210px;
+    }
+
+    .form label{
+      display: inline-block;
+      text-align: left;
+    }
+
+    .form input{
+      display: inline-block;
+      text-align: center;
+
+    }
+    h1{
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
+<body>
+<h1 align = center style="color: black"; "font-size:40px";>MEC DEPARTMENT APPOINTMENTS</h1>
+<br>
+<br><br><br>
+{% for i in data %}
+<h4 align = center style="color: black"; "font-size:30px";> professor id is {{i.id}} and his/her position is {{i.pos}} </h4>
+{% endfor %}
+<br><br><br><br>
+  <div class = "form">
+    <form action="changemechod", method = "POST">
+      {% csrf_token %}
+
+
+        SELECT THE ID OF THE PROFESSOR TO BE APPOINTED AS: <input type= "text" name ="id"><br>
+        <input type="checkbox" id="Rejected" name="status" value="MECHOD">
+        <label for="status">MECHOD</label><br>
+        <input type="checkbox" id="Rejected" name="status" value="Dean">
+        <label for="status">Dean</label><br>
+
+
+        <input type="submit" value="Submit">
+
+
+      </form>
+    </div>
+
+
+</body>
+</html>
